@@ -51,6 +51,12 @@ class _MaterialExampleState extends State<MaterialExample>
     });
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+  }
+
   void toggleBotSheet() {
     if (_controller == null) {
       _controller = scaffoldKey.currentState?.showBottomSheet(
